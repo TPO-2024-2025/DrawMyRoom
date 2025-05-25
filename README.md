@@ -78,6 +78,6 @@ We take security seriously. If you discover a vulnerability, we appreciate your 
 Please refer to our [SECURITY](SECURITY.md) policy for guidelines on how to report issues.
 
 
-## License
+## 📄 License
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
