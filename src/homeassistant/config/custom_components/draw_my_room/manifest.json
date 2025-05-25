@@ -1,0 +1,9 @@
+{
+  "domain": "draw_my_home",
+  "name": "Draw My Home Store",
+  "version": "1.0.0",
+  "documentation": "https://github.com/your-user/draw_my_home",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@your-github-username"]
+}

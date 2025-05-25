@@ -1,0 +1,180 @@
+2025-05-25 12:24:11.018 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration draw_my_home which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-05-25 16:01:28.568 WARNING (MainThread) [homeassistant.components.http.security_filter] Filtered a request with a potential harmful query string: /index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5("hi"));?>+/tmp/index1.php
+2025-05-25 16:01:28.879 WARNING (MainThread) [homeassistant.components.http.security_filter] Filtered a request with a potential harmful query string: /index.php?lang=../../../../../../../../tmp/index1
+2025-05-25 17:43:24.295 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i.point is undefined
+handle3DCanvasClick (/local/drawing-card.js:3974:2725)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 17:43:24.296 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i.point is undefined
+handle3DCanvasClick (/local/drawing-card.js:3974:2725)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 17:44:21.540 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i.point is undefined
+handle3DCanvasClick (/local/drawing-card.js:3974:2725)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 17:44:21.541 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i.point is undefined
+handle3DCanvasClick (/local/drawing-card.js:3974:2725)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 17:53:41.365 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:05:19.992 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 18:05:19.993 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 18:05:26.190 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:05:41.885 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 18:05:41.950 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 18:05:45.096 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 18:05:45.149 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 18:06:38.870 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+this.removeChild (src/panels/lovelace/cards/hui-card.ts:280:11)
+_updateVisibility (src/panels/lovelace/cards/hui-card.ts:261:9)
+fireEvent (src/panels/lovelace/cards/hui-card.ts:160:9)
+ev.stopPropagation (src/panels/lovelace/cards/hui-card.ts:152:13)
+dispatchEvent (src/common/dom/fire_event.ts:75:7)
+tag.includes (src/panels/lovelace/create-element/create-element-base.ts:198:14)
+2025-05-25 18:06:38.934 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+changedProperties.has (src/panels/lovelace/views/hui-masonry-view.ts:157:11)
+performUpdate (src/reactive-element.ts:1328:37)
+scheduleUpdate (src/reactive-element.ts:1262:3)
+t (src/reactive-element.ts:1237:8)
+2025-05-25 18:06:39.069 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+Number (src/panels/lovelace/views/hui-masonry-view.ts:283:9)
+window.matchMedia(` (src/panels/lovelace/views/hui-masonry-view.ts:111:10)
+_initMqls (src/panels/lovelace/views/hui-masonry-view.ts:106:39)
+connectedCallback (src/panels/lovelace/views/hui-masonry-view.ts:61:9)
+2025-05-25 18:06:39.082 ERROR (MainThread) [frontend.js.modern.202504110] Uncaught error from Firefox 138.0 on Windows 10
+TypeError: i is null
+handle3DCanvasClick (/local/drawing-card.js:3978:2650)
+EventListener.handleEvent*setupListeners (/local/drawing-card.js:3877:3221)
+connectedCallback (/local/drawing-card.js:3877:1482)
+apply (src/scoped-custom-element-registry.ts:424:39)
+_addCardToColumn (src/panels/lovelace/views/hui-masonry-view.ts:256:15)
+Promise.all (src/panels/lovelace/views/hui-masonry-view.ts:237:11)
+Number (src/panels/lovelace/views/hui-masonry-view.ts:283:9)
+window.matchMedia(` (src/panels/lovelace/views/hui-masonry-view.ts:111:10)
+_initMqls (src/panels/lovelace/views/hui-masonry-view.ts:106:39)
+connectedCallback (src/panels/lovelace/views/hui-masonry-view.ts:61:9)
+2025-05-25 18:07:27.866 WARNING (MainThread) [homeassistant.components.websocket_api.http.connection] [125843122008080] from 127.0.0.1 (Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0): Disconnected: Received close message during auth phase
+2025-05-25 18:08:02.972 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:08:05.726 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:27:24.885 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:28:49.124 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored
+2025-05-25 18:37:57.353 WARNING (Recorder) [homeassistant.components.recorder.db_schema] State attributes for draw_my_home.last_loaded exceed maximum size of 16384 bytes. This can cause database performance issues; Attributes will not be stored
+2025-05-25 18:38:56.423 WARNING (Recorder) [homeassistant.components.recorder.db_schema] Event data for call_service exceed maximum size of 32768 bytes. This can cause database performance issues; Event data will not be stored

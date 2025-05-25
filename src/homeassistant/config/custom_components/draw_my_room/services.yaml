@@ -1,0 +1,21 @@
+save_plan:
+  name: Save a Draw My Home plan
+  description: Save a JSON floorplan under a given name
+  fields:
+    name:
+      description: The plan’s name (e.g. “living_room”)
+      example: "living_room"
+    data:
+      description: The JSON-serialized FloorplanModel
+      example: '{"paths":[],"devices":[]}'
+load_plan:
+  name: Load a Draw My Home plan
+  description: Load a previously saved plan
+  fields:
+    name:
+      description: The plan’s name to load
+      example: "living_room"
+get_saved_plans:
+  name: Get saved floorplan plans
+  description: Returns a list of saved plan names
+  fields: {}
