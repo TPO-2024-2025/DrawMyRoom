@@ -70,7 +70,7 @@ We welcome contributions! Feel free to:
 - Submit issues
 - Suggest features
 
-Please make sure your code follows our basic guidelines and is respectful to others. Before proceeding please read [CODE OF CONDUCT](CODE_OF_CONDUCT).
+Please make sure your code follows our basic guidelines and is respectful to others. Before proceeding please read [CODE OF CONDUCT](CODE_OF_CONDUCT.md).
 
 ## 😈🔐 Security Vulnerabilities
 
