@@ -75,7 +75,7 @@ Please make sure your code follows our basic guidelines and is respectful to oth
 ## 😈🔐 Security Vulnerabilities
 
 We take security seriously. If you discover a vulnerability, we appreciate your help in disclosing it responsibly.  
-Please refer to our [SECURITY](SECURITY) policy for guidelines on how to report issues.
+Please refer to our [SECURITY](SECURITY.md) policy for guidelines on how to report issues.
 
 
 ## License
