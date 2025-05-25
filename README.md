@@ -52,7 +52,7 @@ cp /homeassistant/config -r /path/to/config
 
 #### 4. Check status
 Visit your domain, and it should be working. You should see a dashboard like the [kuscarcek.si](https://kuscarcek.si/), accessible with the credentials <details><summary>Show credentials</summary>  
-> Username: demo 
+> Username: demo  
 > Password: demo  
 </details>
 
