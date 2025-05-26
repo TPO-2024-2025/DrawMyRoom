@@ -28,7 +28,7 @@ You simply draw your room or house (floor by floor), add your smart devices, and
 
 #### 1. Clone the repo
 ```bash
-ssh git@github.com:TPO-2024-2025/Projekt-15.git
+git clone git@github.com:TPO-2024-2025/DrawMyRoom.git
 ```
 
 #### 2. Fix the domain name and build the cards
