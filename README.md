@@ -28,7 +28,7 @@ You simply draw your room or house (floor by floor), add your smart devices, and
 
 #### 1. Clone the repo
 ```bash
-git clone https://github.com/TPO-2024-2025/DrawMyRoom.git
+ssh git@github.com:TPO-2024-2025/Projekt-15.git
 ```
 
 #### 2. Fix the domain name and build the cards
@@ -43,11 +43,11 @@ The script will automatically update your domain name.
 > ⚠️ *When prompted, enter your domain name. Example: kuscarcek.si* 
 
 #### 3. Move folders
-After a successful build, please move homeassistant/config into /config and homeassistnat/code into /config/www.
+After a successful build, please move the contents of homeassistant/config into /config and the contents of homeassistnat/code into /config/www.
 
 ```bash
-cp /homeassistant/code -r /path/to/config/www
-cp /homeassistant/config -r /path/to/config
+cp -r /homeassistant/code/. /path/to/config/www/
+cp -r /homeassistant/config/. /path/to/config/
 ```
 
 #### 4. Check status
@@ -56,7 +56,16 @@ Visit your domain, and it should be working. You should see a dashboard like the
 > Password: demo  
 </details>
 
-#### 5. Usage
+#### 5. Add resources
+
+1. On your domain, once logged in, select "Settings" on the bottom of the sidebar on the left.
+2. Click on "Dashboards".
+3. In the top right, click on the three dots and select "Resources".
+4. In the bottom right click "ADD RESOURCE".
+5. Set this URL: `/local/drawing-card.js`, resource type: `JavaScript module` and click `Update`.
+6. Repeat step 5. with the URL `/local/energy-graph.js`.
+
+#### 6. Usage
 The dashboard is quite intuitive. If not, please watch this demo video.
 > [📺 Absolute cinema🍿](https://youtu.be/tSYQr0QapdU)
 
