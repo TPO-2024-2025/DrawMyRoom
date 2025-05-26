@@ -11,13 +11,15 @@ export class DeviceAdapter {
         this._proxies = {};
     }
 
+    savePlanCallback = null;
+
     /**
      * Link a device to an entity and create a proxy
      * @param {Device3D} device - The device to link
      * @param {string} entityId - Home Assistant entity ID
      * @returns {DeviceProxy} The created proxy
      */
-    link(device, entityId) {
+    link(device, entityId, doSavePlan = true) {
         // First link the device
         device.link(entityId);
 
@@ -27,6 +29,11 @@ export class DeviceAdapter {
         // Store the proxy for later management
         this.proxies = this.proxies || new Map();
         this.proxies.set(device.id, proxy);
+
+        if (this.savePlanCallback && doSavePlan) {
+            // If a save callback is set, call it with the updated device
+            this.savePlanCallback(device);
+        }
 
         return proxy;
     }

@@ -22,7 +22,7 @@ export class DeviceProxy {
         );
 
         // forward clicks on the 3D object into a custom event
-        this.device3D.onClick(() => this._onClick());
+        this.device3D.setOnClick(() => this._onClick());
     }
 
     /** @private */

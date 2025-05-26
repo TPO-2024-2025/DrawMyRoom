@@ -28,6 +28,7 @@ export class DrawMyHomeCard extends HTMLElement {
   isDrawing = false;
   _elements = {};
   selectedDevice = null;
+  _listenersInitialized = false;
 
   constructor() {
     super();
@@ -66,6 +67,8 @@ export class DrawMyHomeCard extends HTMLElement {
 
   setupListeners() {
     // this.palette.addEventListener('tool-selected', (e) => this.handleToolSelect(e.detail));
+    if (this._listenersInitialized) return;
+    this._listenersInitialized = true;
 
     // Tool palette
     this._elements.lineTool = this.shadowRoot.querySelector('#line-tool');
@@ -96,6 +99,7 @@ export class DrawMyHomeCard extends HTMLElement {
     this.canvasView.canvas.addEventListener('mouseup', (e) => this.handleMouseUp(e));
     window.addEventListener('resize', (e) => this.resize(e));
     this.shadowRoot.querySelector('#submit-button').addEventListener('click', (e) => this.handleSubmit(e));
+    this.shadowRoot.querySelector('#clear-button').addEventListener('click', () => { this.confirmAndDelete(); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Shift') {
         console.log('Shift key pressed');
@@ -109,7 +113,6 @@ export class DrawMyHomeCard extends HTMLElement {
     });
 
     // Listen for device clicks
-    this.addEventListener('draw-my-home-device-clicked', (e) => this.handleDeviceClick(e));
     SceneManager.getInstance().canvas.addEventListener('click', this.handle3DCanvasClick.bind(this));
   }
 
@@ -233,19 +236,20 @@ export class DrawMyHomeCard extends HTMLElement {
   set hass(hass) {
     this._hass = hass;
     this.api.connect(hass);
-    
+
     // Initialize device adapter if needed
     if (!this.deviceAdapter) {
-        this.deviceAdapter = new DeviceAdapter(this.api);
+      this.deviceAdapter = new DeviceAdapter(this.api);
+      this.deviceAdapter.savePlanCallback = () => this.savePlan();
     }
-    
+
     // Update SceneManager with current context
     SceneManager.getInstance().setContext(
-        hass,
-        this.config,
-        this.deviceAdapter
+      hass,
+      this.config,
+      this.deviceAdapter
     );
-    
+
     this.fileManager = new FloorplanFileManager(hass);
 
     // Get saved plans and populate dropdown
@@ -259,7 +263,9 @@ export class DrawMyHomeCard extends HTMLElement {
         this.loadPlan(this.config.default_plan);
       } else if (plans.length > 0) {
         // Otherwise select the first plan if available
-        this.planSelector.setSelected(plans[0]);
+        // if (!this.planSelector.getSelected()) {
+        //   this.planSelector.setSelected(plans[0]);
+        // }
       }
     });
   }
@@ -293,6 +299,9 @@ export class DrawMyHomeCard extends HTMLElement {
       this.createNewPlan();
       return;
     }
+    if (!this.model || this.model.paths.length === 0) {
+      return;
+    }
 
     // Save the current model to the selected plan
     console.log(`Saving to plan: ${planName}`);
@@ -324,6 +333,31 @@ export class DrawMyHomeCard extends HTMLElement {
           this.switchTo2DView();
         }
       });
+    }
+  }
+
+  async confirmAndDelete() {
+    const name = this.planSelector.getSelected();
+    if (!name) return;
+
+    if (!confirm(`Really delete floor plan “${name}”? This cannot be undone.`))
+      return;
+
+    // call the service
+    await this.fileManager.deletePlan(name);
+    // re-fetch the list:
+    const plans = await this.fileManager.getSavedPlans();
+    this.planSelector.show(plans);
+
+    // choose a new selection (either first or none)
+    if (plans.length) {
+      this.planSelector.setSelected(plans[0]);
+      this.loadPlan(plans[0]);
+    } else {
+      // nothing left
+      this.planSelector.setSelected(null);
+      this.model = new FloorplanModel();
+      this.switchTo2DView();
     }
   }
 
@@ -367,6 +401,7 @@ export class DrawMyHomeCard extends HTMLElement {
     this.selectedDevice = name;
   }
 
+  // When a device is being added in 3D view, handle the click event
   handle3DCanvasClick(event) {
     if (!this.selectedDevice) {
       console.warn('No device selected for 3D canvas click');
@@ -381,9 +416,6 @@ export class DrawMyHomeCard extends HTMLElement {
     }
     const position = clickedIntersection.point.clone();
     const rotation = clickedIntersection.object.rotation.clone();
-    console.log('CLICKED OBJECT ROTATION HEREEEE:', rotation);
-  
-    console.log('Clicked position:', position);
 
     try {
       // Create device using the factory
@@ -513,21 +545,6 @@ export class DrawMyHomeCard extends HTMLElement {
     SceneManager.getInstance().resize();
   }
 
-
-  // Add this method to handle device click events
-  handleDeviceClick(event) {
-    const deviceId = event.detail.deviceId;
-    const entityId = event.detail.entityId;
-
-    if (entityId) {
-      // Device is already linked - show HA entity dialog
-      this.showEntityDialog(entityId);
-    } else {
-      // Device needs to be linked - show entity selection menu
-      this.showEntitySelectionMenu(deviceId);
-    }
-  }
-
   /**
    * Show Home Assistant entity dialog
    * @param {string} entityId - Entity ID to display
@@ -539,30 +556,6 @@ export class DrawMyHomeCard extends HTMLElement {
       composed: true
     });
     this.dispatchEvent(event);
-  }
-
-  /**
-   * Show entity selection menu
-   * @param {string} deviceId - Device to link
-   */
-  showEntitySelectionMenu(deviceId) {
-    // Find the device
-    const device = this.model.devices.find(d => d.id === deviceId);
-    if (!device) return;
-
-    // Get entities from config or all entities from hass
-    let entities = [];
-    if (this.config && this.config.entities) {
-      entities = this.config.entities;
-    } else {
-      entities = Object.keys(this._hass.states).map(id => ({ entity: id }));
-    }
-
-    // Show selection menu
-    window.entitySelectionMenu.show(entities, (selectedEntityId) => {
-      // Link the device to selected entity
-      this.linkDeviceToEntity(device, selectedEntityId);
-    });
   }
 
   /**

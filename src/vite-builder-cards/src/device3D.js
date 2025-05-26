@@ -131,7 +131,7 @@ export class Device3D {
         const colorMap = {
             'red': 0xff0000,
             'green': 0x00ff00, 
-            'blue': 0x9999ff,
+            'blue': 0x75bae9,
             'yellow': 0xffff00,
             'purple': 0x800080,
             'gray': 0x888888,

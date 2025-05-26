@@ -19,3 +19,10 @@ get_saved_plans:
   name: Get saved floorplan plans
   description: Returns a list of saved plan names
   fields: {}
+delete_plan:
+  name: Delete a Draw My Home plan
+  description: Delete a previously saved floorplan by name
+  fields:
+    name:
+      description: The plan’s name to delete (e.g. “living_room”)
+      example: "living_room"

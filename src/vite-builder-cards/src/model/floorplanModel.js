@@ -2,6 +2,7 @@
 import { Device3D } from "../device3D.js";
 import { Path } from "../path.js";              // ← your Path class
 import * as THREE from "three";
+import { SceneManager } from "../sceneManager.js";
 
 export class FloorplanModel {
   paths = [];
@@ -50,6 +51,10 @@ export class FloorplanModel {
       }
       if (rawDev.entityId) {
         d.entityId = rawDev.entity_id;
+      }
+
+      if (rawDev.entityId) {
+        SceneManager.getInstance().deviceAdapter.link(d, rawDev.entityId, false);
       }
 
       model.addDevice(d);

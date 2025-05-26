@@ -82,6 +82,8 @@ export class DropdownFloorplanSelector extends HTMLElement {
         placeholder.disabled = true;
         placeholder.selected = !this.selectedPlan;
         select.appendChild(placeholder);
+
+        console.warn('Current selected plan:', this.selectedPlan);
         
         // Add plan options
         this.plans.forEach(plan => {
@@ -125,8 +127,8 @@ export class DropdownFloorplanSelector extends HTMLElement {
             // Dispatch an event with the selected plan
             this.dispatchEvent(new CustomEvent('plan-selected', {
                 detail: { plan: value },
-                bubbles: true,
-                composed: true
+                bubbles: false,
+                composed: false
             }));
         }
     }

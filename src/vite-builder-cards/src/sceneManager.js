@@ -206,29 +206,6 @@ export class SceneManager {
 
     }
 
-    handleDeviceClick(deviceId) {
-        const device = this.findDeviceById(deviceId);
-        if (!device) return;
-        
-        if (device.entityId) {
-            // Device is already linked - trigger Home Assistant dialog
-            const event = new CustomEvent('hass-more-info', {
-                detail: { entityId: device.entityId },
-                bubbles: true,
-                composed: true
-            });
-            this.canvas.dispatchEvent(event);
-        } else {
-            // Device is not linked - show entity selection menu
-            window.entitySelectionMenu.show(
-                this.hass,
-                device,
-                this.deviceAdapter,
-                this.config?.entities
-            );
-        }
-    }
-
     setContext(hass, config, deviceAdapter) {
         this.hass = hass;
         this.config = config;

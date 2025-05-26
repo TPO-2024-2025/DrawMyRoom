@@ -33,7 +33,6 @@ export class FloorplanBuilder {
 
     // Create all the walls
     for (const path of paths) {
-      console.log("Building path", path);
       const x1 = path.x1 / divisionFactor;
       const y1 = path.y1 / divisionFactor;
       const x2 = path.x2 / divisionFactor;
@@ -63,7 +62,6 @@ export class FloorplanBuilder {
       cube.position.set(centerX, centerY, centerZ);
 
       sceneData.objects.add(cube);
-      console.log("Scene data again", sceneData);
     }
     // Create all the devices
     for (const device of devices) {
